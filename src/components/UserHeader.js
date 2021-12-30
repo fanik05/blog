@@ -5,13 +5,11 @@ import { fetchUser } from '../actions';
 const UserHeader = ({ userId, user, fetchUser }) => {
     useEffect(() => fetchUser(userId), [fetchUser, userId]);
 
-    return (
-        <div>{user && user.name}</div>
-    );
+    return <div>{user && user.name}</div>;
 };
 
-const mapStateToProps = ({ users }, { userId }) => ({ 
-    user: users.find(user => user.id === userId) 
+const mapStateToProps = ({ users }, { userId }) => ({
+    user: users.find((user) => user.id === userId),
 });
 
 export default connect(mapStateToProps, { fetchUser })(UserHeader);

@@ -6,7 +6,7 @@ import UserHeader from './UserHeader';
 const PostList = ({ posts, fetchPosts }) => {
     useEffect(() => fetchPosts(), [fetchPosts]);
 
-    const renderList = posts.map(post => {
+    const renderList = posts.map((post) => {
         return (
             <div className="item" key={post.id}>
                 <i className="large middle aligned icon user" />
@@ -21,11 +21,7 @@ const PostList = ({ posts, fetchPosts }) => {
         );
     });
 
-    return (
-        <div className="ui relaxed divided list">
-            {renderList}
-        </div>
-    );
+    return <div className="ui relaxed divided list">{renderList}</div>;
 };
 
 const mapStateToProps = ({ posts }) => ({ posts });
